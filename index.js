@@ -6,22 +6,26 @@ const config = require('./config.json')
 // On start le bot
 client.on('ready', () => {
 
-  client.setInterval(() => {
-      
-      mcping = require('mc-ping');
-      var ipmc = process.env.IPMC || process.argv[2]
-  mcping(ipmc, 25600, function(err, res) {
-    if (err) {
-      // Some kind of error
-      client.user.setActivity('Serveur fermer', { type: "LISTENING" })
-    } else {
-      // Success!
-      client.user.setActivity('' + res.num_players + ' / ' + res.max_players + ' connectés', { type: "LISTENING" })
-    }
-  }, 3000);
-      
-  }, 100)
+    function calling() {
+        console.log("interval 1")
+        try {
+            let mcping = require('mc-ping');
+            let ipmc = process.env.IPMC || process.argv[2]
 
+            mcping(ipmc, 25600, function(err, res) {
+            if (err) {
+              // Some kind of error
+              client.user.setActivity('Serveur fermer', { type: "LISTENING" })
+            } else {
+              // Success!
+              client.user.setActivity('' + res.num_players + ' / ' + res.max_players + ' connectés', { type: "LISTENING" })
+            }
+            }, 3000);
+        } catch (err) {
+          console.log(err)
+        }
+    }
+  setInterval(calling,100) // 24h = 86 400 000
   client.user.setActivity('Hey !', { type: "LISTENING" })
   console.log('-------------------------------------')
   console.log('     [!] BOT connecté [!]     ')
