@@ -7,7 +7,7 @@ const config = require('./config.json')
 client.on('ready', () => {
 
     function calling() {
-        console.log("interval 1")
+        //console.log("interval 1")
         try {
             let mcping = require('mc-ping');
             let ipmc = process.env.IPMC || process.argv[2]
@@ -44,7 +44,7 @@ client.on('message', message => {
 
   // The list of if/else is replaced with those simple 2 lines:
   try {
-    console.log(command)
+    console.log(command + " from " + message.author.username)
     let commandFile = require(`./module/${command}.js`)
     commandFile.run(client, message, args)
   } catch (err) {
