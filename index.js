@@ -21,7 +21,7 @@ client.on('ready', () => {
             if (err) {
               // Some kind of error
               console.log(err)
-              client.user.setActivity('Serveur fermer', { type: "LISTENING" })
+              client.user.setActivity('Serveur fermer', { type: "STREAMING" })
             } else {
               // Success!
               client.user.setActivity('' + res.num_players + ' / ' + res.max_players + ' connectés', { type: "LISTENING" })
