@@ -21,7 +21,7 @@ client.on('ready', () => {
             if (err) {
               // Some kind of error
               console.log(err)
-              bot.user.setPresence({
+              client.user.setPresence({
               game: {
                   name: 'with depression',
                   type: "STREAMING",
@@ -30,7 +30,7 @@ client.on('ready', () => {
               });
             } else {
               // Success!
-              bot.user.setPresence({
+              client.user.setPresence({
               game: {
                   name: res.num_players + ' / ' + res.max_players + ' connectés',
                   type: "STREAMING",
@@ -51,7 +51,7 @@ client.on('ready', () => {
         }
     }
   setInterval(calling,3000) // 24h = 86 400 000
-  bot.user.setPresence({
+  client.user.setPresence({
   game: {
       name: 'Connected',
       type: "STREAMING",
