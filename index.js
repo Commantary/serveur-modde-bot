@@ -21,10 +21,22 @@ client.on('ready', () => {
             if (err) {
               // Some kind of error
               console.log(err)
-              client.user.setActivity('Serveur fermer', { type: "STREAMING" })
+              bot.user.setPresence({
+              game: {
+                  name: 'with depression',
+                  type: "STREAMING",
+                  url: "https://www.twitch.tv/commentary"
+              }
+              });
             } else {
               // Success!
-              client.user.setActivity('' + res.num_players + ' / ' + res.max_players + ' connectés', { type: "LISTENING" })
+              bot.user.setPresence({
+              game: {
+                  name: res.num_players + ' / ' + res.max_players + ' connectés',
+                  type: "STREAMING",
+                  url: "https://www.twitch.tv/commentary"
+              }
+              });
               console.log("update " + i)
               i += 1;
               if(i>99){
@@ -39,7 +51,13 @@ client.on('ready', () => {
         }
     }
   setInterval(calling,3000) // 24h = 86 400 000
-  client.user.setActivity('Connected', { type: "LISTENING" })
+  bot.user.setPresence({
+  game: {
+      name: 'Connected',
+      type: "STREAMING",
+      url: "https://www.twitch.tv/commentary"
+  }
+  });
   console.log('-------------------------------------')
   console.log('     [!] BOT connecté [!]     ')
   console.log('-------------------------------------')
