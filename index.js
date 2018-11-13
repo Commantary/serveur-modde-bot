@@ -2,31 +2,44 @@
 const discord = require('discord.js')
 const client = new discord.Client()
 const config = require('./config.json')
+var dt = process.env.TOKEN2 || process.argv[2]
+var ipmc = process.env.IPMC || process.argv[2]
+if (!dt) {
+  console.log('')
+}
 
 // On start le bot
 client.on('ready', () => {
-
+    var i = 0;
     function calling() {
         //console.log("interval 1")
         try {
             let mcping = require('mc-ping');
-            let ipmc = process.env.IPMC || process.argv[2]
+            //let ipmc = process.env.IPMC || process.argv[2]
 
-            mcping(ipmc, 25600, function(err, res) {
+            mcping("62.4.9.216", 25600, function(err, res) {
             if (err) {
               // Some kind of error
+              console.log(err)
               client.user.setActivity('Serveur fermer', { type: "LISTENING" })
             } else {
               // Success!
               client.user.setActivity('' + res.num_players + ' / ' + res.max_players + ' connectés', { type: "LISTENING" })
+              console.log("update " + i)
+              i += 1;
+              if(i>99){
+                client.destroy()
+                client.login(dt)
+                i = 0;
+              }
             }
             }, 3000);
         } catch (err) {
           console.log(err)
         }
     }
-  setInterval(calling,200) // 24h = 86 400 000
-  client.user.setActivity('Hey !', { type: "LISTENING" })
+  setInterval(calling,3000) // 24h = 86 400 000
+  client.user.setActivity('Connected', { type: "LISTENING" })
   console.log('-------------------------------------')
   console.log('     [!] BOT connecté [!]     ')
   console.log('-------------------------------------')
@@ -52,10 +65,6 @@ client.on('message', message => {
   }
 })
 
-var dt = process.env.TOKEN2 || process.argv[2]
 
-if (!dt) {
-  console.log('')
-}
 
 client.login(dt);
