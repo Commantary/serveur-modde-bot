@@ -46,7 +46,7 @@ client.on('ready', () => {
                 i = 0;
               }
             }
-            }, 3000);
+            }, 6000);
         } catch (err) {
           console.log(err)
         }
