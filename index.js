@@ -11,6 +11,7 @@ if (!dt) {
 // On start le bot
 client.on('ready', () => {
     var i = 0;
+    /*
     function calling() {
         //console.log("interval 1")
         try {
@@ -51,9 +52,10 @@ client.on('ready', () => {
         }
     }
   setInterval(calling,3000) // 24h = 86 400 000
+  */
   client.user.setPresence({
   game: {
-      name: 'Connected',
+      name: 'Serveur OUVERT ! GO GO GO',
       type: "STREAMING",
       url: "https://www.twitch.tv/commentary"
   }
