@@ -3,7 +3,7 @@
 module.exports.run = async (client, message, args) => {
 	console.log("HEY")
  
-	mcping = require('mc-ping');
+	mcping = require('mc-ping-updated');
 	var ipmc = process.env.IPMC || process.argv[2]
 	
 	mcping(ipmc, 25600, function(err, res) {
@@ -23,11 +23,15 @@ module.exports.run = async (client, message, args) => {
 				description: "SERVEUR OUVERT",
 				fields: [{
 				name: "Joueurs connectés:",
-				value: res.num_players + " / " + res.max_players
+				value: res.players.online + " / " + res.players.max
 				},
 				{
 					name: "Version:",
 					value: res.minecraft_version
+				},
+				{
+					name: "MOTD:",
+					value: res.description.text
 				}
 				]
 			}})

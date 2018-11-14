@@ -14,7 +14,7 @@ client.on('ready', () => {
     function calling() {
         //console.log("interval 1")
         try {
-            let mcping = require('mc-ping');
+            let mcping = require('mc-ping-updated');
             //let ipmc = process.env.IPMC || process.argv[2]
 
             mcping("62.4.9.216", 25600, function(err, res) {
