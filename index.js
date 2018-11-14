@@ -33,7 +33,7 @@ client.on('ready', () => {
               console.log(res)
               client.user.setPresence({
               game: {
-                  name: res.num_players + ' / ' + res.max_players + ' connectés',
+                  name: res.players.online + " / " + res.players.max + ' connectés',
                   type: "STREAMING",
                   url: "https://www.twitch.tv/commentary"
               }
