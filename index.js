@@ -23,7 +23,7 @@ client.on('ready', () => {
               console.log(err)
               client.user.setPresence({
               game: {
-                  name: 'with depression',
+                  name: 'serveur fermer',
                   type: "STREAMING",
                   url: "https://www.twitch.tv/commentary"
               }
