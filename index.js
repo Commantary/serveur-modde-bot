@@ -30,7 +30,6 @@ client.on('ready', () => {
               });
             } else {
               // Success!
-              console.log(res)
               client.user.setPresence({
               game: {
                   name: res.players.online + " / " + res.players.max + ' connectés',
