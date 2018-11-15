@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
 				},
 				{
 					name: "MOTD:",
-					value: res.description['text']
+					value: "Serveur modde des retards"
 				}
 				]
 			}})
