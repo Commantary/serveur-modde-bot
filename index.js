@@ -11,7 +11,7 @@ if (!dt) {
 // On start le bot
 client.on('ready', () => {
     var i = 0;
-    /*
+    
     function calling() {
         //console.log("interval 1")
         try {
@@ -46,13 +46,13 @@ client.on('ready', () => {
                 i = 0;
               }
             }
-            }, 6000);
+            });
         } catch (err) {
           console.log(err)
         }
     }
   setInterval(calling,3000) // 24h = 86 400 000
-  */
+  
   client.user.setPresence({
   game: {
       name: 'Serveur OUVERT ! GO GO GO',

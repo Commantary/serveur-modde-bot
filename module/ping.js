@@ -36,5 +36,5 @@ module.exports.run = async (client, message, args) => {
 				]
 			}})
 		}
-	}, 3000);
+	});
 }
