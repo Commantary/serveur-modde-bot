@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
 				},
 				{
 					name: "Version:",
-					value: res.minecraft_version
+					value: res.version.name
 				},
 				{
 					name: "MOTD:",
