@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
 			console.log(res);
 			message.channel.send({embed: {
 				color: 3067130,
-				title: res.server_name,
+				title: res.description.text,
 				description: "SERVEUR OUVERT",
 				fields: [{
 				name: "Joueurs connectés:",
