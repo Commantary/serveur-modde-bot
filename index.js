@@ -40,11 +40,6 @@ client.on('ready', () => {
               });
               console.log("update " + i)
               i += 1;
-              if(i>99){
-                client.destroy()
-                client.login(dt)
-                i = 0;
-              }
             }
             });
         } catch (err) {
