@@ -50,7 +50,7 @@ client.on('ready', () => {
                     color: 10157614,
                     description: "Un joueur vient de se connecter !"
                   }})
-                  localNumbersPlayers = i;
+                  localNumbersPlayers += 1;
                 }
               } else if(localNumbersPlayers > onlineNumbersPlayers){
                 for (var i = localNumbersPlayers; i > onlineNumbersPlayers; i--) {
@@ -58,7 +58,7 @@ client.on('ready', () => {
                     color: 16657966,
                     description: "Un joueur vient de se déconnecter !"
                   }})
-                  localNumbersPlayers = i;
+                  localNumbersPlayers -= 1;
                 }
               }
               console.log("localNumbersPlayers=" + localNumbersPlayers + " | onlineNumbersPlayers=" + onlineNumbersPlayers)
