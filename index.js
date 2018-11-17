@@ -42,7 +42,6 @@ client.on('ready', () => {
               });
               console.log("update " + i)
               i += 1;
-              client.channels.get(channelID).send('My Message');
               onlineNumbersPlayers = res.players.online;
 
               if(localNumbersPlayers < onlineNumbersPlayers){
