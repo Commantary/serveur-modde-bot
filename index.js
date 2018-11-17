@@ -10,7 +10,7 @@ if (!dt) {
 
 // On start le bot
 client.on('ready', () => {
-    var i = 0;
+    var u = 0;
     var localNumbersPlayers = 0;
     var onlineNumbersPlayers;
     
@@ -40,8 +40,8 @@ client.on('ready', () => {
                   url: "https://www.twitch.tv/commentary"
               }
               });
-              console.log("update " + i)
-              i += 1;
+              console.log("update " + u)
+              u += 1;
               onlineNumbersPlayers = res.players.online;
 
               if(localNumbersPlayers < onlineNumbersPlayers){
