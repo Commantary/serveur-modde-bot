@@ -61,6 +61,7 @@ client.on('ready', () => {
                   localNumbersPlayers = i;
                 }
               }
+              console.log("localNumbersPlayers=" + localNumbersPlayers + " | onlineNumbersPlayers=" + onlineNumbersPlayers)
             }
             });
         } catch (err) {
