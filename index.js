@@ -11,6 +11,8 @@ if (!dt) {
 // On start le bot
 client.on('ready', () => {
     var i = 0;
+    var localNumbersPlayers = 0;
+    var onlineNumbersPlayers;
     
     function calling() {
         //console.log("interval 1")
@@ -40,6 +42,26 @@ client.on('ready', () => {
               });
               console.log("update " + i)
               i += 1;
+              client.channels.get(channelID).send('My Message');
+              onlineNumbersPlayers = res.players.online;
+
+              if(localNumbersPlayers < onlineNumbersPlayers){
+                for (var i = localNumbersPlayers; i < onlineNumbersPlayers; i++) {
+                  client.channels.get("513161444238426112").send({embed: {
+                    color: 10157614,
+                    description: "Un joueur vient de se connecter !"
+                  }})
+                  localNumbersPlayers = i;
+                }
+              } else if(localNumbersPlayers > onlineNumbersPlayers){
+                for (var i = localNumbersPlayers; i > onlineNumbersPlayers; i--) {
+                  client.channels.get("513161444238426112").send({embed: {
+                    color: 16657966,
+                    description: "Un joueur vient de se déconnecter !"
+                  }})
+                  localNumbersPlayers = i;
+                }
+              }
             }
             });
         } catch (err) {
