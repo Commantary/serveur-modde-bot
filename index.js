@@ -46,7 +46,7 @@ client.on('ready', () => {
 
               if(localNumbersPlayers < onlineNumbersPlayers){
                 for (var i = localNumbersPlayers; i < onlineNumbersPlayers; i++) {
-                  client.channels.get("513161444238426112").send({embed: {
+                  client.channels.get("513169582387757061").send({embed: {
                     color: 10157614,
                     description: "Un joueur vient de se connecter !"
                   }})
@@ -54,7 +54,7 @@ client.on('ready', () => {
                 }
               } else if(localNumbersPlayers > onlineNumbersPlayers){
                 for (var i = localNumbersPlayers; i > onlineNumbersPlayers; i--) {
-                  client.channels.get("513161444238426112").send({embed: {
+                  client.channels.get("513169582387757061").send({embed: {
                     color: 16657966,
                     description: "Un joueur vient de se déconnecter !"
                   }})
