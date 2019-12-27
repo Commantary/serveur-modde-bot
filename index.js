@@ -20,7 +20,7 @@ client.on('ready', () => {
             let mcping = require('mc-ping-updated');
             //let ipmc = process.env.IPMC || process.argv[2]
 
-            mcping("62.4.9.216", 25600, function(err, res) {
+            mcping("136.243.79.22", 25588, function(err, res) {
             if (err) {
               // Some kind of error
               console.log(err)
