@@ -71,7 +71,7 @@ client.on('ready', () => {
   
   client.user.setPresence({
   game: {
-      name: 'Serveur OUVERT ! GO GO GO',
+      name: 'Je mange des gens',
       type: "PLAYING"
   }
   });
