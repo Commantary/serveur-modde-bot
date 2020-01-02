@@ -68,7 +68,7 @@ client.on('ready', () => {
           console.log(err)
         }
     }
-  setInterval(calling,5000) // 24h = 86 400 000
+  //setInterval(calling,5000) // 24h = 86 400 000
   
   client.user.setPresence({
   game: {
