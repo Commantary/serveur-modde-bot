@@ -72,8 +72,7 @@ client.on('ready', () => {
   client.user.setPresence({
   game: {
       name: 'Serveur OUVERT ! GO GO GO',
-      type: "STREAMING",
-      url: "https://www.twitch.tv/commentary"
+      type: "PLAYING"
   }
   });
   console.log('-------------------------------------')
