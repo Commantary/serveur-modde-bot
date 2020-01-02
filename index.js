@@ -27,8 +27,7 @@ client.on('ready', () => {
               client.user.setPresence({
               game: {
                   name: 'serveur fermer',
-                  type: "STREAMING",
-                  url: "https://www.twitch.tv/commentary"
+                  type: "PLAYING"
               }
               });
             } else {
