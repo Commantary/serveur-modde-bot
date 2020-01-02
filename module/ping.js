@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 	console.log("HEY")
  
 	mcping = require('mc-ping-updated');
-	var ipmc = 136.243.79.22
+	var ipmc = "136.243.79.22"
 	
 	mcping(ipmc, 25588, function(err, res) {
 		if (err) {
